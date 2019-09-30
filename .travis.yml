@@ -3,11 +3,11 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t brktopcu/react-test -f ./client/Dockerfile.dev ./client
+# before_install:
+#   - docker build -t brktopcu/react-test -f ./client/Dockerfile.dev ./client
 
-script:
-  - docker run -e CI=true brktopcu/react-test npm run test
+# script:
+#   - docker run -e CI=true brktopcu/react-test npm run test
 
 after_success:
   - docker build -t brktopcu/multi-client ./client
